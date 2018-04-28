@@ -1,0 +1,9 @@
+program meuprograma {
+
+	var x;
+	
+	x = 5;
+	
+	println 6;
+	
+}

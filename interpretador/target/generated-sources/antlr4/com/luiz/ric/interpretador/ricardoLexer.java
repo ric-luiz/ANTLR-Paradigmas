@@ -1,4 +1,4 @@
-// Generated from ricardo.g4 by ANTLR 4.4
+// Generated from com\luiz\ric\interpretador\ricardo.g4 by ANTLR 4.5.3
 package com.luiz.ric.interpretador;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
@@ -11,7 +11,7 @@ import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class ricardoLexer extends Lexer {
-	static { RuntimeMetaData.checkVersion("4.4", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -25,19 +25,56 @@ public class ricardoLexer extends Lexer {
 		"DEFAULT_MODE"
 	};
 
-	public static final String[] tokenNames = {
-		"'\\u0000'", "'\\u0001'", "'\\u0002'", "'\\u0003'", "'\\u0004'", "'\\u0005'", 
-		"'\\u0006'", "'\\u0007'", "'\b'", "'\t'", "'\n'", "'\\u000B'", "'\f'", 
-		"'\r'", "'\\u000E'", "'\\u000F'", "'\\u0010'", "'\\u0011'", "'\\u0012'", 
-		"'\\u0013'", "'\\u0014'", "'\\u0015'", "'\\u0016'", "'\\u0017'", "'\\u0018'", 
-		"'\\u0019'"
-	};
 	public static final String[] ruleNames = {
 		"PROGRAM", "VAR", "PRINTLN", "PLUS", "MENOS", "MULT", "DIV", "AND", "OR", 
 		"NOT", "GT", "LT", "GTQ", "LTQ", "EQ", "NEQ", "ASSIGN", "BRACKETS_OPEN", 
 		"BRACKETS_CLOSE", "PAR_OPEN", "PAR_CLOSE", "SEMICOLON", "ID", "NUMBER", 
 		"WS"
 	};
+
+	private static final String[] _LITERAL_NAMES = {
+		null, "'program'", "'var'", "'println'", "'+'", "'-'", "'*'", "'/'", "'&&'", 
+		"'||'", "'!'", "'>'", "'<'", "'>='", "'<='", "'=='", "'!='", "'='", "'{'", 
+		"'}'", "'('", "')'", "';'"
+	};
+	private static final String[] _SYMBOLIC_NAMES = {
+		null, "PROGRAM", "VAR", "PRINTLN", "PLUS", "MENOS", "MULT", "DIV", "AND", 
+		"OR", "NOT", "GT", "LT", "GTQ", "LTQ", "EQ", "NEQ", "ASSIGN", "BRACKETS_OPEN", 
+		"BRACKETS_CLOSE", "PAR_OPEN", "PAR_CLOSE", "SEMICOLON", "ID", "NUMBER", 
+		"WS"
+	};
+	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
+
+	/**
+	 * @deprecated Use {@link #VOCABULARY} instead.
+	 */
+	@Deprecated
+	public static final String[] tokenNames;
+	static {
+		tokenNames = new String[_SYMBOLIC_NAMES.length];
+		for (int i = 0; i < tokenNames.length; i++) {
+			tokenNames[i] = VOCABULARY.getLiteralName(i);
+			if (tokenNames[i] == null) {
+				tokenNames[i] = VOCABULARY.getSymbolicName(i);
+			}
+
+			if (tokenNames[i] == null) {
+				tokenNames[i] = "<INVALID>";
+			}
+		}
+	}
+
+	@Override
+	@Deprecated
+	public String[] getTokenNames() {
+		return tokenNames;
+	}
+
+	@Override
+
+	public Vocabulary getVocabulary() {
+		return VOCABULARY;
+	}
 
 
 	public ricardoLexer(CharStream input) {
@@ -47,9 +84,6 @@ public class ricardoLexer extends Lexer {
 
 	@Override
 	public String getGrammarFileName() { return "ricardo.g4"; }
-
-	@Override
-	public String[] getTokenNames() { return tokenNames; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

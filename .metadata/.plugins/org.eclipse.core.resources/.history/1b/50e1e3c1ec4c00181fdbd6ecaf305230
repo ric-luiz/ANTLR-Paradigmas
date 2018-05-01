@@ -1,0 +1,65 @@
+grammar ricardo;
+
+@parser::header {
+    import java.Util.Map;
+    import java.Util.HashMap;
+}
+
+@parser::members {
+    Map<String,Object> symbolTable = new HashMap<String, Object>();
+}
+
+program: PROGRAM ID BRACKETS_OPEN 
+	sentece*
+	BRACKETS_CLOSE;
+
+sentece: var_decl | var_assign | println;
+
+var_decl: VAR ID SEMICOLON {
+    symbolTable.put($ID.text,0);
+};
+var_assign: ID ASSIGN expression SEMICOLON {
+    symbolTable.put($ID.text,$expression.value);
+};
+println: PRINTLN expression SEMICOLON {System.out.println($expression.value);};
+
+expression returns [Object value]: 
+    NUMBER {$value = Integer.parseInt($NUMBER.text);} 
+    | 
+    ID {$value = $ID.text;};
+
+PROGRAM : 'program' ;
+VAR: 'var';
+PRINTLN: 'println';
+
+PLUS: '+';
+MENOS: '-';
+MULT: '*';
+DIV: '/';
+
+AND: '&&';
+OR: '||';
+NOT : '!';
+
+GT: '>';
+LT: '<';
+GTQ: '>=';
+LTQ: '<=';
+EQ: '==';
+NEQ: '!=';
+
+ASSIGN: '=';
+
+BRACKETS_OPEN: '{';
+BRACKETS_CLOSE: '}';
+
+PAR_OPEN: '(';
+PAR_CLOSE: ')';
+
+SEMICOLON: ';';
+
+ID: [a-zA-Z_][a-zA-Z0-9_]*;
+
+NUMBER: [0-9];
+
+WS: [ \t\r\n]+ -> skip ;

@@ -1,5 +1,9 @@
-// Generated from com\luiz\ric\interpretador\ricardo.g4 by ANTLR 4.5.1
+// Generated from com\luiz\ric\interpretador\ricardo.g4 by ANTLR 4.5.3
 package com.luiz.ric.interpretador;
+
+    import java.util.Map;
+    import java.util.HashMap;
+
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -46,4 +50,18 @@ public class ricardoBaseVisitor<T> extends AbstractParseTreeVisitor<T> implement
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitPrintln(ricardoParser.PrintlnContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitExpression(ricardoParser.ExpressionContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitTerm(ricardoParser.TermContext ctx) { return visitChildren(ctx); }
 }

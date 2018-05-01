@@ -1,5 +1,9 @@
-// Generated from com\luiz\ric\interpretador\ricardo.g4 by ANTLR 4.5.1
+// Generated from com\luiz\ric\interpretador\ricardo.g4 by ANTLR 4.5.3
 package com.luiz.ric.interpretador;
+
+    import java.util.Map;
+    import java.util.HashMap;
+
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -40,4 +44,16 @@ public interface ricardoVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitPrintln(ricardoParser.PrintlnContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ricardoParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpression(ricardoParser.ExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ricardoParser#term}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTerm(ricardoParser.TermContext ctx);
 }

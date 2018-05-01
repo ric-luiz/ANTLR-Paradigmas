@@ -5,5 +5,14 @@ program meuprograma {
 	x = 5;
 	
 	println 6;
+
+        println x;
 	
+        var y;
+
+        y = x;
+        
+        println y+x;
+        
+        println y + x + 5;
 }
